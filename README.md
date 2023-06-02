@@ -54,3 +54,8 @@ WHERE name='Jane'
 SELECT * FROM users
 FULL JOIN orders o on users.id = o.user_id
 WHERE price>100;
+
+SELECT SUM(price), name FROM users
+FULL JOIN orders o on users.id = o.user_id
+GROUP BY name
+ORDER BY SUM(price) DESC;
