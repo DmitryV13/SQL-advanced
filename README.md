@@ -59,3 +59,8 @@ SELECT SUM(price), name FROM users
 FULL JOIN orders o on users.id = o.user_id
 GROUP BY name
 ORDER BY SUM(price) DESC;
+
+SELECT count(o.user_id), name FROM users
+FULL JOIN orders o on users.id = o.user_id
+GROUP BY name
+ORDER BY count(o.user_id);
